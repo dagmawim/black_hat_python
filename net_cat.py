@@ -5,7 +5,7 @@ import socket
 import getopt
 import subprocess
 
-#globals
+#globals 
 listen = False
 command = False
 upload = False
@@ -20,7 +20,7 @@ def usage():
     print
     print "Usage: file.py -t target_host -p port"
     print " -l --listen     - listen on [host]:[port] for oncoming connections"
-    print " -e --execute=file_to_run - execute the given file upon recieving a connection"
+    print " -e --execute=file_to_run - execute the given fi le upon recieving a connection"
     print " -c --command  -initialize the command line shell"
     print " -u --upload=destination -upon recieving connection upload a file and write to destination"
     print
@@ -82,7 +82,6 @@ def server_loop():
 def run_command(command):
     # trim the new line
     command = command.rstrip()
-    
     try:
         output = subprocess.check_output(command,
                                          stderr=subprocess.STDOUT,
@@ -127,7 +126,7 @@ def client_handler(client_socket):
     if command:
         while True:
             # show a simple prompt
-            client_socket.send("<NETTOOL:#> ")
+            client_socket.send("<NETTOOL:#>")
             # now we recieve until we see a line feed (enter key)
             cmd_buffer = ""
             while "\n" not in cmd_buffer:
@@ -171,15 +170,15 @@ def main():
         else:
             assert False, "Unhandled Option"
         
-        # listen or just send data ?
-        if not listen and len(target) and port > 0:
-            buffer = '' # sys.stdin.read()
-            client_sender(buffer)
+    # listen or just send data ?
+    if not listen and len(target) and port > 0:
+        buffer = sys.stdin.read()
+        client_sender(buffer)
             
-        # we might drop a shell depending 
-        # on our command
-        if listen:
-            server_loop()
+    # we might drop a shell depending 
+    # on our command
+    if listen:
+        server_loop()
 main()
 
 
