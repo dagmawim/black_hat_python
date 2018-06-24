@@ -25,7 +25,7 @@ def get_current_process():
     executable = create_string_buffer("\x00" * 512)
     h_process = kernel32.OpenProcess(0x400 | 0x10, False, pid)
     
-    psappi.GetModuleBaseNameA(h_process, None, byref(executable), 512)
+    psapi.GetModuleBaseNameA(h_process, None, byref(executable), 512)
     
     #now read its title
     window_title = create_string_buffer("\x00" * 512)
