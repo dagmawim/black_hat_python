@@ -1,6 +1,12 @@
-# BH_Python Book code implementation
+# Code implementations
 
-These are scripts and ideas from the Black Hat Python book that I thought would be cool to implement. This repo use to live in my private account, but decided to bust it out...I needed the SC to play around with, without having to log in.
+Based on "Black Hat Python: Python Programming for Hackers and Pentesters" by Justin Seitz.
+
+These are scripts and ideas that I thought would be interesting to implement. 
+
+This repo use to live in my private account, but decided to make it public.
+
+Feel free to make changes and suggestions.
 
 
 
